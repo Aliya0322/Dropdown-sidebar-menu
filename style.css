@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 200vh;
+    background: linear-gradient(180deg, #f59e0b, #ea580c);
+    display: flex;
+}
+
+aside {
+    background: white;
+    width: 350px;
+    height: 100vh;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25 );
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.head .logo {
+    display: flex;
+    align-items: center;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+
+}
+
+.head .logo .logo-title span {
+    color: #ea580c;
+
+}
+
+.head .logo img {
+    width: 30%; 
+    height: auto;
+}
+
+.head .fa-bars {
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.nav {
+    border-top: solid #f3f4f6;
+    padding-top: 15px;
+    margin-top: 20px;
+    flex: 1;
+}
+
+aside:not(aside.close) .nav {
+    overflow-y: auto;
+}
+
+
+.nav::-webkit-scrollbar {
+    width: 0;
+
+}
+.menu {
+    padding: 15px 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.85 );
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.menu:hover {
+    background: #f3f4f6;
+    color:black
+}
+
+.menu i {
+    font-size: 35px;
+}
+
+.menu span {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.foot {
+    padding-top: 20px;
+    border-top:solid #f3f4f6;
+}
+
+.profile {
+    display: flex;
+    gap:10px;
+    align-items: center;
+
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.profile .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .info .name {
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 25px;
+}
+
+.profile .info .job {
+    font-size: 13px;
+}
+
+.foot .menu-logout {
+    color: red;
+    background: #f3f4f6;
+    margin-top: 15px;
+}
+
+.foot .menu-logout:hover {
+    background: #fee2e2;
+    color: red;
+}
+
+aside.close {
+    width: 140px;
+
+}
+
+aside.close .logo {
+    display: none;
+
+}
+
+aside.close .menu fa-bars {
+    width: 100%;
+    text-align: center;
+}
+
+aside.close .menu span {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25 );
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 100px;
+    font-size: 20px;
+    opacity: 0;
+    transition: 0.3;
+    pointer-events: none;
+}
+
+aside.close .menu i:nth-child(1) {
+    width: 100%;
+    text-align: center;
+}
+
+
+aside.close .menu i:nth-child(3) {
+    display: none;
+}
+
+aside.close .menu:hover span {
+    margin-left: 60px;
+    opacity: 1;
+}
+
+
+.nav .menu.active {
+    background: linear-gradient(90deg, #f59e0b, #ea580c);
+    color: white;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25 );
+}
+
+aside.close .menu-dropdown {
+    position: relative;
+}
+
+aside.close .menu-dropdown .sub-menu {
+    position: absolute;
+    background: white;
+    padding-left: 0;
+    margin-left: 110px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 12px;
+    top: -55px;
+    z-index: 2;
+}
+
+.menu-dropdown .sub-menu {
+    padding-left: 45px;
+    margin-top: 5px;
+}
+
+.menu-dropdown .sub-menu span {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    white-space: nowrap; /* Чтобы текст не переносился */
+}
+
+
+aside.close .menu-dropdown:hover .sub-menu {
+    display: block; /* Показать подменю при наведении */
+}
+
+aside.close .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Выравнивание центра */
+}
+
+aside.close .profile .info {
+    display: none; /* Скрыть информацию профиля */
+}
+
+header {
+    background: rgba(255, 255, 255, 0.15);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 25px;
+}
+
+header h1 {
+    color: white;
+}

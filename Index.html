@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu</title>
+    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <aside>
+
+        <div class="head">
+            <div class="logo">
+                <img src="image/OrangeLogo.png" alt="logo">
+                <h2 class="logo-title">Code<span>Arry</span></h2>
+            </div>
+            <i class="fa-solid fa-bars hamburger-menu"></i>
+        </div>
+
+    
+        <div class="nav">
+
+            <div class="menu">
+                <i class="fa-brands fa-codiepie"></i>
+                <span>Dashboard</span>
+            </div>
+
+            <div class="menu">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span>Posts</span>
+            </div>
+    
+
+            <div class="menu">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tasks</span>
+                <i class="fa-regular fa-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">Assignment</span>
+                    <span class="menu">Completed</span>
+                </div>
+            </div>
+    
+            <div class="menu">
+                <i class="fa-regular fa-bell"></i>
+                <span>Notification</span>
+            </div>
+    
+            <!-- Teams Menu -->
+            <div class="menu">
+                <i class="fa-regular fa-user-plus"></i>
+                <span>Teams</span>
+                <i class="fa-regular fa-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">Programmer</span>
+                    <span class="menu">Trader</span>
+                    <span class="menu">Youtuber</span> 
+                </div>
+            </div>
+    
+            <div class="menu">
+                <i class="fa-regular fa-gear"></i>
+                <span>Settings</span>
+            </div>
+            <div class="menu"></div>
+        </div>
+    
+        <div class="foot">
+            <div class="profile">
+                <img src="image/avatar.png" alt="profile">
+                <div class="info">
+                    <span class="name">John Doe</span>
+                    <span class="job">Student</span>
+                </div>
+            </div>
+            <div class="menu menu-logout">
+                <i class="fa-regular fa-arrow-right-from-bracket"></i>
+                <span>Logout</span> 
+            </div>
+        </div>
+    </aside>
+    <header>
+        <h1>SIDEBAR</h1>
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $('.hamburger-menu').click(function() {
+            $('aside').toggleClass('close');
+        });
+
+        $('.menu').click(function () {
+            $(this).siblings('.menu').removeClass('active');
+            $(this).addClass('active');
+            
+            $(this).next('.menu').siblings('.menu-dropdown').children('.sub-menu').slideUp();
+            $(this).next(".menu-dropdown").children(".sub-menu").slideToggle();
+            
+            $(this).next().siblings('.menu-dropdown').children('.sub-menu').children('.menu').removeClass('active')
+            
+        });
+
+
+    </script>
+</body>
+</html>
